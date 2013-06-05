@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+ <head>
+  <title>A simple todo application</title>
+
+  <link rel="stylesheet" href="styles.css"/>
+
+  <script type="text/javascript" src="jquery-1.7.2.js"></script>
+  <script type="text/javascript" src="libmvc.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script>
+  	$(function(){
+  		$.App.initialize();
+  	});
+  </script>
+ </head>
+ <body>
+  <div class="content">
+   <h1>Todo with Model-View-Controller</h1>
+   <div>
+    <input type="text" name="todo" id="todo" autocomplete="false" placeholder="Add something to do" value=""/>&nbsp;<button id="todoAdd">Add</button>
+    <div id="totolist"></div>
+    <div class="buttons"><button id="todoDel">Delete</button></div>
+   </div>
+  </div>
+ </body>
+</html>
+

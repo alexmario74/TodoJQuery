@@ -1,0 +1,43 @@
+* {
+ font-family: Arial,Helvetika,sanse-serf;
+}
+
+button {
+	height: 38px;
+}
+
+.content {
+	width: 600px;
+	text-align: center;
+	height: 700px;
+	background-color: #FFFEEE;
+	margin: 0 auto;
+	padding: 8px;
+	border: solid 2px #444;
+}
+
+#todo {
+	width: 300px;
+	height: 30px;
+	font-style: bold;
+	font-size: 1.2em;
+}
+
+#totolist {
+	background-color: #fff;
+	border: solid 1px #ccc;
+	border-radius: 7px;
+	margin: 25px 10px;
+	padding: 30px 5px 5xp 5xp;
+	font-size: 1.2em;
+	text-align: left;
+	display: none;
+}
+
+.todoList {
+	list-style: none;
+}
+
+.buttons {
+	margin-top: 25px;
+}
