@@ -2,7 +2,8 @@
  * @author so000255
  */
 (function(win,$){
-
+	'use strict';
+	
 	function each(a, fn) {
 		if (Array.isArray(a)) {
 			eachArray(a, fn);

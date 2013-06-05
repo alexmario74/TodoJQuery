@@ -1,5 +1,6 @@
 (function(w, $) {
-
+	'use strict';
+	
 	var TodoListView = $.MVCFwk.createElement('View',
 	{
 		models: [],
@@ -34,10 +35,14 @@
 			var el = $('<ul class="todoList"></ul>');
 			for(var i = 0, l = this.models.length; i < l; i++) {
 				var model = this.models[i];
-				el.append($('<li><div><input type="checkbox" value="' + model.id() + '"/>&nbsp;' +this.formatTime(model.get('time'))+ ', ' + model.get('text') + '</div></li>'));
+				el.append($('<li><div><input type="checkbox" value="' + model.id() + '"/>&nbsp;' +this.formatTime(model.get('time'))+ ', ' + model.get('text') + '<div class="close">X</div></div></li>'));
 			}
 			
 			$(this.el).html(el);
+			
+			$($(this.el).find('.close')).click(function(){
+				
+			});
 			
 			if (this.models.length > 0) {
 				$(this.el).show();
@@ -54,6 +59,7 @@
 		$('button#todoAdd').click(function() {
 			self.add.apply(self, arguments);
 		});
+		/*
 		$('button#todoDel').click(function(vent) {
 			var ids = [];
 			$('input[type="checkbox"]').each(function(i,el) {
@@ -62,7 +68,14 @@
 				}
 			});
 			self.trigger.call(self, 'todo:del', ids);
+		});*/
+		
+		$(window).click(function(vent){
+			if (vent.target.className == 'close') {
+				self.trigger.call(self, 'todo:del', vent.target.previousElementSibling.value);
+			}
 		});
+		
 		this.testElement = $('#todo');
 
 		this.todoListView = new TodoListView({
