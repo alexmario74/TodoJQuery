@@ -1,6 +1,9 @@
 (function(w, $) {
 	'use strict';
 	
+	/**
+	 * The TodoListView show the list of created todos
+	 */
 	var TodoListView = $.MVCFwk.createElement('View',
 	{
 		models: [],
@@ -54,21 +57,17 @@
 		}
 	});
 	
+	/**
+	 * The TodoController provide business logic of the app.
+	 * 
+	 * It create the view, the model, bind the proper events.
+	 * 
+	 */
 	var TodoController = function() {
 		var self = this;
 		$('button#todoAdd').click(function() {
 			self.add.apply(self, arguments);
 		});
-		/*
-		$('button#todoDel').click(function(vent) {
-			var ids = [];
-			$('input[type="checkbox"]').each(function(i,el) {
-				if (el.checked) {
-					ids.push(el.value);
-				}
-			});
-			self.trigger.call(self, 'todo:del', ids);
-		});*/
 		
 		$(window).click(function(vent){
 			if (vent.target.className == 'close') {
