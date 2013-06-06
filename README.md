@@ -1,22 +1,22 @@
 TODO jQuery
 ===========
 
-A simple, trivial jQuery based TODO application to show the an implementation of the Model-View-Controller design pattern.
+A simple, trivial jQuery based TODO application, to show an implementation of the Model-View-Controller design pattern.
 
 Controller
 -----------
 
-This class have the following methods:
+Class methods:
 
   *register(evnt,fn,scope)*
   
-   Register an handler function to the given event.
+   Register an handler function to listen for the given event.
   
-   evnt: the name of the event to listner on
+   evnt: the name of the event to listen
   
-   fn: the name of the callback function invoked when the event is raised
+   fn: the name of the callback function, or handler invoked when the event is raised
   
-   scope: the object which the fn refers to
+   scope: the object which the fn refers, if not given the controller object will be the context
   
   *unregister(evnt)*
   
@@ -35,6 +35,8 @@ This class have the following methods:
 
 Model
 -----
+
+Class methods:
 
   *set(name, value)*
   
@@ -57,6 +59,8 @@ Model
 
 View
 ----
+
+Class methods: 
 
   *render()*
 
